@@ -5,5 +5,5 @@
 ## Описание проектов:
 | Номер проекта    | Название проекта     | Описание | Используемые библиотеки/приложения |                                                  
 | :--------------- | :------------------- | :------- | :---------------------- |
-| 1                | [Проект_Fandango](https://github.com/VeraNovich/Yandex.Praktikum_WorkShop/tree/main/01_Дашборд_Bolid_Team)| Создание дашборда для компании “Bolid.Team” | *Datalens*, *Python* |
+| 1                | [Проект_Fandango](https://github.com/VeraNovich/Yandex.Praktikum_WorkShop/tree/main/01_Дашборд_Bolid_Team)| Проверка объективности ретингов фильмов, выставленных компанией Fandango в 2015 г. | *Datalens*, *Python* |
 
