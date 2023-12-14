@@ -1,0 +1,208 @@
+[
+   {
+      "table":"Webinars",
+      "description":"Параметры вебинара",
+      "type":"dimension",
+      "shared":false,
+      "order":3,
+      "fields":[
+         {
+            "name":"webinar_id",
+            "description":"Идентификатор вебинара",
+            "type":"integer",
+            "primary":true,
+            "index":true,
+            "nullable":false,
+            "source":null,
+            "path":null
+         },
+         {
+            "name":"w_date",
+            "description":"Дата вебинара",
+            "type":"datetime",
+            "primary":false,
+            "index":false,
+            "nullable":true,
+            "source":"request",
+            "path":"$.Webinars.w_date"
+         }
+         {
+            "name":"w_name",
+            "description":"Название вебинара",
+            "type":"string(200)",
+            "primary":false,
+            "index":false,
+            "nullable":true,
+            "source":"request",
+            "path":"$.Webinars.w_name"
+         }
+      ]
+   },
+   {
+      "table":"Users",
+      "description":"Параметры участников",
+      "type":"dimension",
+      "shared":false,
+      "order":3,
+      "fields":[
+         {
+            "name":"user_id",
+            "description":"Идентификатор участника",
+            "type":"integer",
+            "primary":true,
+            "index":true,
+            "nullable":false,
+            "source":null,
+            "path":null
+         },
+         {
+            "name":"email",
+            "description":"Почта участника",
+            "type":"string(32)",
+            "primary":false,
+            "index":false,
+            "nullable":true,
+            "source":"request",
+            "path":"$.Users.email"
+         },
+         {
+            "name":"phone",
+            "description":"Телефон участника",
+            "type":"string(32)",
+            "primary":false,
+            "index":false,
+            "nullable":true,
+            "source":"request",
+            "path":"$.Users.phone"
+         },
+         {
+            "name":"sb_id",
+            "description":"Индификатор участника в месенджере",
+            "type":"integer",
+            "primary":false,
+            "index":false,
+            "nullable":true,
+            "source":"request",
+            "path":"$.Users.sb_id"
+         },
+         {
+            "name":"name",
+            "description":"Имя участника",
+            "type":"string(32)",
+            "primary":false,
+            "index":false,
+            "nullable":true,
+            "source":"request",
+            "path":"$.Users.name"
+         }
+      ]
+   },
+   {
+      "table":"Traffic",
+      "description":"Параметры трафика",
+      "type":"dimension",
+      "shared":false,
+      "order":3,
+      "fields":[
+         {
+            "name":"traffic_id",
+            "description":"Идентификатор трафика",
+            "type":"integer",
+            "primary":true,
+            "index":true,
+            "nullable":false,
+            "source":null,
+            "path":null
+         },
+         {
+            "name":"utm_source",
+            "description":"Источник",
+            "type":"string(32)",
+            "primary":false,
+            "index":false,
+            "nullable":true,
+            "source":"request",
+            "path":"$.Traffic.session.utm_json.source"
+         },
+         {
+            "name":"utm_medium",
+            "description":"Канал",
+            "type":"string(32)",
+            "primary":false,
+            "index":false,
+            "nullable":true,
+            "source":"request",
+            "path":"$.Traffic.session.utm_json.medium"
+         },
+         {
+            "name":"utm_campaign",
+            "description":"Кампания",
+            "type":"string(32)",
+            "primary":false,
+            "index":false,
+            "nullable":true,
+            "source":"request",
+            "path":"$.Traffic.session.utm_json.medium"
+         }
+      ]
+   },
+   {
+      "table":"Regisrtation",
+      "description":"Регистрации на вебинар",
+      "type":"fact",
+      "shared":false,
+      "order":1,
+      "fields":[
+         {
+            "name":"reg_id",
+            "description":"Идентификатор регистрации",
+            "type":"integer",
+            "primary":true,
+            "index":true,
+            "nullable":false,
+            "source":"tables",
+            "path":"$.Regisrtation[0].id"
+         },
+         {
+            "name":"full_date",
+            "description":"Дата регистрации",
+            "type":"integer",
+            "primary":false,
+            "index":false,
+            "nullable":false,
+            "source":"request",
+            "path":"$.Regisrtation.full_date"
+         },
+         {
+            "name":"webinar_id",
+            "description":"Индификатор вебинара",
+            "type":"integer",
+            "primary":false,
+            "index":false,
+            "nullable":false,
+            "source":"tables",
+            "path":"$.Webinars[0].webinar_id"
+         },
+         {
+            "name":"user_id",
+            "description":"Индификатор участника",
+            "type":"integer",
+            "primary":false,
+            "index":false,
+            "nullable":false,
+            "source":"tables",
+            "path":"$.Users[0].user_id"
+         },
+         {
+            "name":"traffic_id",
+            "description":"Индификатор трафика",
+            "type":"integer",
+            "primary":false,
+            "index":false,
+            "nullable":false,
+            "source":"tables",
+            "path":"$.Traffic[0].traffic_id"
+         }
+      ]
+   }
+]
