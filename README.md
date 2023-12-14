@@ -6,4 +6,5 @@
 | Номер проекта    | Название проекта     | Описание | Используемые библиотеки/приложения |                                                  
 | :--------------- | :------------------- | :------- | :---------------------- |
 | 1                | [Проект_Fandango](https://github.com/VeraNovich/Pet-projects/tree/main/Fandango)| Проверка объективности ретингов фильмов, выставленных компанией Fandango в 2015 г. | *Datalens*, *Python* |
+| 2                | [Проект_Stone_city](https://github.com/VeraNovich/Pet-projects/tree/main/Stone_city)| Тестовое задание на должность BI - аналитика в Каменный город| *Datalens*, *Python* |
 
